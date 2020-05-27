@@ -1,1 +1,1 @@
-
+web: gunicorn e_prescriber.wsgi
