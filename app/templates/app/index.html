@@ -6,5 +6,11 @@
 </head>
 <body>
 <h4> Under construction</h4>
+<div>
+    {% csrf_token %}
+    <form method="post">
+        {{ form.as_p }}
+    </form>
+</div>
 </body>
 </html>
