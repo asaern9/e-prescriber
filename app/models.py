@@ -42,3 +42,6 @@ class Prescription(models.Model):
     administer_contact = models.CharField(max_length=10)
     name_of_pharmacy = models.CharField(max_length=150)
     pharmacy_address = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.patient_name

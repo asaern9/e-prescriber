@@ -7,9 +7,18 @@
 <body>
 <h4> Under construction</h4>
 <div>
-    {% csrf_token %}
-    <form method="post">
+    {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    <form method="POST">
+        {% csrf_token %}
         {{ form.as_p }}
+        <input type="submit" value="Save Prescription">
     </form>
 </div>
 </body>
