@@ -1,25 +1,143 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>e-prescribe</title>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static '' %}" type="image/png">
+        <title>FoodIn</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'app/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'app/vendors/linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'app/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app/vendors/owl-carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app/vendors/lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'app/vendors/nice-select/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'app/vendors/animate-css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'app/vendors/popup/magnific-popup.css' %}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'app/css/responsive.css' %}">
 </head>
 <body>
-<h4> Under construction</h4>
-<div>
-    {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }} alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Save Prescription">
-    </form>
+{% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+<div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <section class="feature_area p_120">
+        	<div class="container">
+        		<div class="feature_inner row">
+        			<div class="col-md-4">
+                        <div class="feature_item">
+                            <h4>Patient Details</h4>
+                            <div class="form-group  ">
+                                {{ form.patient_name }}
+                            </div>
+                            <div class="form-group  form-select">
+                                {{ form.patient_sex }}
+                            </div>
+                            <div class="form-group  ">
+                                {{ form.patient_age }}
+                            </div>
+                            <div class="form-group  ">
+                                {{ form.patient_weight }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.patient_date_of_birth }}
+                            </div>
+                            <div class="form-group form-select">
+                                {{ form.patient_contact }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.postal_address }}
+                            </div>
+        				</div>
+        			</div>
+                    <div class="col-md-4">
+        				<div class="feature_item">
+                            <h4>Prescription</h4>
+                            <div class="form-group form-select">
+                                {{ form.drug_class }}
+                            </div>
+                            <div class="form-group form-select">
+                                {{ form.drug_name }}
+                            </div>
+                             <div class="form-group form-select">
+                                {{ form.drug_form }}
+                            </div> <div class="form-group form-select">
+                                {{ form.channel }}
+                            </div> <div class="form-group form-select">
+                                {{ form.quantity }}
+                            </div> <div class="form-group" >
+                                {{ form.dosage }}
+                            </div>
+                            <div  class="form-group">
+                                {{ form.precaution }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.side_effect }}
+                            </div>
+
+        				</div>
+        			</div>
+                    <div class="col-md-4">
+        				<div class="feature_item">
+                            <h4>Administer Details</h4>
+                            <div class="form-group  name">
+                                {{ form.administer_name }}
+                            </div>
+                            <div class="form-group  email">
+                                {{ form.administer_contact }}
+                            </div>
+                            <div class="form-group  name">
+                                {{ form.name_of_pharmacy }}
+                            </div>
+                            <div class="form-group  email">
+                                {{ form.pharmacy_address }}
+                            </div>
+                             <div class="form-group">
+                                 <label>Date of issue</label>
+                                {{ form.date_of_issue }}
+                            </div> <div class="form-group">
+                                <label>End date:</label>
+                                {{ form.end_date }}
+                            </div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+            <div class="pt-4" style="text-align: center">
+                <button type="submit" class="genric-btn success circle" style="font-size: 14px">Save</button>
+            </div>
+
+        </section>
+
+        </form>
 </div>
+    <script src="{% static 'app/js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'app/js/popper.js' %}"></script>
+        <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'app/js/stellar.js' %}"></script>
+        <script src="{% static 'app/vendors/lightbox/simpleLightbox.min.js' %}"></script>
+        <script src="{% static 'app/vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'app/vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'app/vendors/isotope/isotope-min.js' %}"></script>
+        <script src="{% static 'app/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'app/js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'app/vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'app/vendors/counter-up/jquery.counterup.js' %}"></script>
+        <script src="{% static 'app/js/mail-script.js' %}"></script>
+        <script src="{% static 'app/vendors/popup/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'app/js/theme.js' %}"></script>
+        <script src="{% static  'app/js/index.js' %}"></script>
 </body>
 </html>

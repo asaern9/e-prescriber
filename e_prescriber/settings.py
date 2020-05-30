@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -122,5 +123,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+

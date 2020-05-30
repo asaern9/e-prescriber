@@ -9,7 +9,7 @@ def index(request):
         form = PrescriptionForm(request.POST)
         if form.is_valid():
             form_save = form.save()
-            messages.success(request, 'News submitted for approval')
+            messages.success(request, 'Prescription saved!!')
             return redirect('index')
     else:
         form = PrescriptionForm()
