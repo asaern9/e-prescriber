@@ -6,7 +6,7 @@
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="{% static '' %}" type="image/png">
-        <title>FoodIn</title>
+        <title>E-prescriber</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{% static 'app/css/bootstrap.css' %}">
         <link rel="stylesheet" href="{% static 'app/vendors/linericon/style.css' %}">
@@ -115,7 +115,8 @@
         		</div>
         	</div>
             <div class="pt-4" style="text-align: center">
-                <button type="submit" class="genric-btn success circle" style="font-size: 14px">Save</button>
+                <button type="submit" class="genric-btn success circle mr-3" style="font-size: 14px">Save</button>
+                <a href="{% url 'index' %}" class="genric-btn success circle ml-3" style="font-size: 14px">Cancel</a>
             </div>
 
         </section>
